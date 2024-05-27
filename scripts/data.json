@@ -1,35 +1,23 @@
 [
     {
-        "name": "test1",
-        "receptiveField": "20",
-        "electricalImage": "1",
-        "timeCourse": "1",
-        "interspike": "1",
-        "morphology": "1",
-        "notes": "1",
-        "datasets": "1",
-        "confounds": "1",
+        "id": "on-midget",
+        "name": "ON Midget",
+        "notes": "SUCH A COOL CELL OMG",
+        "datasets": "2018-08-07-09\n2018-08-07-09\n2018-08-07-09",
+        "confounds": "ON smooth monostratified"
     },
     {
+        "id": "test2",
         "name": "test2",
-        "receptiveField": "20",
-        "electricalImage": "1",
-        "timeCourse": "1",
-        "interspike": "1",
-        "morphology": "1",
         "notes": "1",
         "datasets": "1",
-        "confounds": "1",
+        "confounds": "1"
     },
     {
+        "id": "test3",
         "name": "test3",
-        "receptiveField": "20",
-        "electricalImage": "1",
-        "timeCourse": "1",
-        "interspike": "1",
-        "morphology": "1",
         "notes": "1",
         "datasets": "1",
-        "confounds": "1",
+        "confounds": "1"
     }
 ]

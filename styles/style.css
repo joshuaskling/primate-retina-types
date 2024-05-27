@@ -1,3 +1,11 @@
+.header {
+    background-color: #669999;
+}
+
+.flex-container {
+    display: flex;
+}
+
 body {
     margin: 0;
 }
@@ -7,24 +15,18 @@ table{
     border: 1px solid;
     width: 100%;
 }
+.table-header {
+    text-align: center;
+}
 tr {
     display: flex;
 }
 td {
     border: 1px solid;
     flex-grow: 1;
-    max-width: 10%;
+    max-width: 11%;
     padding: 0;
 }
-
 td img {
     width: 100%;
-}
-
-.header {
-    background-color: #669999;
-}
-
-.flex-container {
-    display: flex;
 }
