@@ -1,6 +1,11 @@
 window.onload = (event) => {
     document.getElementById("menu-icon").addEventListener("click", toggleMenu); 
+    document.getElementById("select-all").addEventListener("click", selectAll); 
+    document.getElementById("select-none").addEventListener("click", selectNone); 
+    document.getElementById("submit-cells").addEventListener("click", applySelection); 
     initMultiselect();
+    getJSON();
+    setData();
 };
 
 //get json file
@@ -57,15 +62,16 @@ async function setData() {
 //menu toggle actions
 function toggleMenu() {
     
-    if (document.getElementById("display-cells").style.display == "none"){
+    if (document.getElementById("menu-elements").style.display == "none"){
         document.getElementById("menu").style.flex = 10;
-        document.getElementById("display-cells").style.display = "block";
+        document.getElementById("menu-elements").style.display = "block";
     } else {
         document.getElementById("menu").style.flex = 1;
-        document.getElementById("display-cells").style.display = "none";
+        document.getElementById("menu-elements").style.display = "none";
     }
 }
 
+//initialize multi selector for cells
 function initMultiselect() {
     checkboxStatusChange();
   
@@ -124,5 +130,18 @@ function initMultiselect() {
     }
   }
 
-getJSON();
-setData();
+//select all
+function selectAll(){
+    console.log("select all")
+}
+
+//select none
+function selectNone(){
+    console.log("select none")
+}
+
+//apply dropdown cell selections
+function applySelection(){
+    console.log("Apply selection");
+}
+

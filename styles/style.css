@@ -1,6 +1,19 @@
 .flex-container {
     display: flex;
 }
+.evenly-space-children{
+    justify-content: space-between;
+}
+.center-children {
+    justify-content: center;
+}
+.horizontal-margins {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+button {
+    padding: 1em;
+}
 
 body {
     margin: 0;
@@ -43,8 +56,10 @@ html {
     background-color: #92b9b9;
 }
 #display-cells {
-    display: none;
     margin: 1em;
+}
+#menu-elements {
+    display: none;
 }
 
 /*multi select*/
@@ -79,7 +94,6 @@ html {
     min-height: 1.2em;
     background-color: #ffffff00;
     padding: 0 2.25rem 0 .75rem;
-    /* padding: .375rem 2.25rem .375rem .75rem; */
   }
   #mySelectOptions label:hover {
     background-color: #1e90ff;

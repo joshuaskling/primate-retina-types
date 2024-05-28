@@ -15,17 +15,25 @@
   <div class="flex-container">
     <div class="flex-child" id="menu">
       <input type="image" src="./images/assets/list.png" id="menu-icon">
-      <div id="display-cells">
-        <label for="myMultiselect">Select Cells To Display</label>
-        <div id="myMultiselect" class="multiselect">
-          <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
-            <select class="form-select">
-              <option>somevalue</option>
-            </select>
-            <div class="overSelect"></div>
+      <div id="menu-elements">
+        <div class="flex-container evenly-space-children">
+          <button id="select-all" class="horizontal-margins">Select All</button>
+          <button id="select-none" class="horizontal-margins"> Select None</button>
+        </div>
+        <div id="display-cells">
+          <label for="myMultiselect">Select Cells To Display</label>
+          <div id="myMultiselect" class="multiselect">
+            <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
+              <select class="form-select">
+                <option>somevalue</option>
+              </select>
+              <div class="overSelect"></div>
+            </div>
+            <div id="mySelectOptions"></div>
           </div>
-          <div id="mySelectOptions">
-          </div>
+        </div>
+        <div class="flex-container center-children">
+          <button id="submit-cells" class="horizontal-margins">Submit</button>
         </div>
       </div>
     </div>
