@@ -13,14 +13,21 @@
     <h2>Primate Retina Types</h2>
   </div>
   <div class="flex-container">
-    <div class="flex-child" id="menu"">
+    <div class="flex-child" id="menu">
       <input type="image" src="./images/assets/list.png" id="menu-icon">
-      <select name="Display Cells" id="display-cells">
-        <option value="cell1">ON Midget</option>
-        <option value="cell2">OFF Midget</option>
-        <option value="cell3">UP Midget</option>
-        <option value="cell4">DOWN Midget</option>
-      </select>
+      <div id="display-cells">
+        <label for="myMultiselect">Select Cells To Display</label>
+        <div id="myMultiselect" class="multiselect">
+          <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
+            <select class="form-select">
+              <option>somevalue</option>
+            </select>
+            <div class="overSelect"></div>
+          </div>
+          <div id="mySelectOptions">
+          </div>
+        </div>
+      </div>
     </div>
     <table id="data-table" class="flex-child">
       <tr class="table-header">

@@ -1,3 +1,8 @@
+window.onload = (event) => {
+    document.getElementById("menu-icon").addEventListener("click", toggleMenu); 
+    initMultiselect();
+};
+
 //get json file
 async function getJSON() {
     return fetch('./scripts/data.json')
@@ -11,6 +16,7 @@ async function setData() {
 
     //set table id
     var table = document.getElementById("data-table");
+    var dropdown = document.getElementById("mySelectOptions");
 
     //loop through json and set elements
     var i = 0;
@@ -41,6 +47,9 @@ async function setData() {
         datasets.innerHTML = json[i].datasets;
         confounds.innerHTML = json[i].confounds;
 
+        //set dropdown elements
+        var elementToAppend = '<label for=' + json[i].id + '><input type="checkbox" id=' + json[i].id + ' onchange="checkboxStatusChange()" value=' + json[i].id + ' />' + json[i].name + '</label>';
+        dropdown.insertAdjacentHTML('beforeend', elementToAppend);
         i++;
     }
 }
@@ -49,7 +58,7 @@ async function setData() {
 function toggleMenu() {
     
     if (document.getElementById("display-cells").style.display == "none"){
-        document.getElementById("menu").style.flex = 5;
+        document.getElementById("menu").style.flex = 10;
         document.getElementById("display-cells").style.display = "block";
     } else {
         document.getElementById("menu").style.flex = 1;
@@ -57,6 +66,63 @@ function toggleMenu() {
     }
 }
 
-document.getElementById("menu-icon").addEventListener("click", toggleMenu); 
+function initMultiselect() {
+    checkboxStatusChange();
+  
+    document.addEventListener("click", function(evt) {
+      var flyoutElement = document.getElementById('myMultiselect'),
+        targetElement = evt.target; // clicked element
+  
+      do {
+        if (targetElement == flyoutElement) {
+          // This is a click inside. Do nothing, just return.
+          //console.log('click inside');
+          return;
+        }
+  
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+      } while (targetElement);
+  
+      // This is a click outside.
+      toggleCheckboxArea(true);
+      //console.log('click outside');
+    });
+  }
+  
+  function checkboxStatusChange() {
+    var multiselect = document.getElementById("mySelectLabel");
+    var multiselectOption = multiselect.getElementsByTagName('option')[0];
+  
+    var values = [];
+    var checkboxes = document.getElementById("mySelectOptions");
+    var checkedCheckboxes = checkboxes.querySelectorAll('input[type=checkbox]:checked');
+  
+    for (const item of checkedCheckboxes) {
+      var checkboxValue = item.getAttribute('value');
+      values.push(checkboxValue);
+    }
+  
+    var dropdownValue = "Nothing is selected";
+    if (values.length > 0) {
+      dropdownValue = values.join(', ');
+    }
+  
+    multiselectOption.innerText = dropdownValue;
+  }
+  
+  function toggleCheckboxArea(onlyHide = false) {
+    var checkboxes = document.getElementById("mySelectOptions");
+    var displayValue = checkboxes.style.display;
+  
+    if (displayValue != "block") {
+      if (onlyHide == false) {
+        checkboxes.style.display = "block";
+      }
+    } else {
+      checkboxes.style.display = "none";
+    }
+  }
+
 getJSON();
 setData();
