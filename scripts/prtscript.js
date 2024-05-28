@@ -45,5 +45,18 @@ async function setData() {
     }
 }
 
+//menu toggle actions
+function toggleMenu() {
+    
+    if (document.getElementById("display-cells").style.display == "none"){
+        document.getElementById("menu").style.flex = 5;
+        document.getElementById("display-cells").style.display = "block";
+    } else {
+        document.getElementById("menu").style.flex = 1;
+        document.getElementById("display-cells").style.display = "none";
+    }
+}
+
+document.getElementById("menu-icon").addEventListener("click", toggleMenu); 
 getJSON();
 setData();
